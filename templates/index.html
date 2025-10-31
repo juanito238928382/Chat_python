@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Chat Python — Pro</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>🐍 Chat Python — Pro (local)</h1>
+
+        <div id="chat-box" class="chat-box">
+            <div class="bot">Hola 👋, soy tu asistente de Python. Antes de empezar, ¿cómo te llamas?</div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="mensaje" placeholder="Escribe tu respuesta aquí...">
+            <button id="enviar">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const enviarBtn = document.getElementById('enviar');
+        const mensajeInput = document.getElementById('mensaje');
+        const chatBox = document.getElementById('chat-box');
+
+        let nombre = null; // 🔹 Guardará el nombre del usuario
+
+        function agregarMensaje(origen, texto) {
+            const msg = document.createElement('div');
+            msg.className = origen;
+            msg.textContent = texto;
+            chatBox.appendChild(msg);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        enviarBtn.addEventListener('click', async () => {
+            const mensaje = mensajeInput.value.trim();
+            if (!mensaje) return;
+
+            agregarMensaje('user', 'Tú: ' + mensaje);
+            mensajeInput.value = '';
+
+            // 🔹 Primera interacción: pedir nombre
+            if (!nombre) {
+                nombre = mensaje;
+                agregarMensaje('bot', `¡Encantado de conocerte, ${nombre}! 😄 Pregúntame lo que quieras sobre Python.`);
+                return;
+            }
+
+            // 🔹 Enviar pregunta al servidor
+            const res = await fetch('/preguntar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mensaje })
+            });
+
+            const data = await res.json();
+            agregarMensaje('bot', `${nombre}, Chat Python dice: ${data.respuesta}`);
+        });
+
+        mensajeInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') enviarBtn.click();
+        });
+    </script>
+</body>
+</html>

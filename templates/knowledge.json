@@ -1,0 +1,90 @@
+[
+  {
+    "title": "print()",
+    "keywords": ["print()", "print", "mostrar", "imprimir"],
+    "answer": "La función **print()** muestra texto o valores en pantalla. Ejemplo:\n\n```\nprint('Hola, mundo')\n```",
+    "examples": ["**Ejemplo:**\n```python\nfor i in range(3):\n    print(i)\n```"]
+  },
+  {
+    "title": "Variables y tipos",
+    "keywords": ["variable", "variables", "asignar", "tipos", "tipo de dato"],
+    "answer": "Una **variable** guarda un valor. Ejemplo: `nombre = 'Ana'`. Los tipos básicos: **str** (texto), **int** (enteros), **float** (decimales) y **bool** (True/False).",
+    "examples": ["**Ejemplo de tipos:**\n```python\nx = 10        # int\npi = 3.14     # float\nnombre = 'A'  # str\nactivo = True # bool\n```"]
+  },
+  {
+    "title": "Condicionales (if / elif / else)",
+    "keywords": ["if", "elif", "else", "condicional", "condicionales"],
+    "answer": "Las condicionales permiten ejecutar código según condiciones. Ejemplo:\n\n```\nif edad >= 18:\n    print('Eres mayor')\nelif edad == 17:\n    print('Casi')\nelse:\n    print('Eres menor')\n```"
+  },
+  {
+    "title": "Bucle for",
+    "keywords": ["for", "bucle for", "iterar", "range"],
+    "answer": "Un **bucle for** recorre secuencias. Ejemplo:\n\n```\nfor i in range(5):\n    print(i)\n```",
+    "examples": ["**Iterar lista:**\n```python\nfrutas = ['manzana','pera']\nfor f in frutas:\n    print(f)\n```"]
+  },
+  {
+    "title": "Bucle while",
+    "keywords": ["while", "bucle while"],
+    "answer": "Un **bucle while** repite mientras la condición sea verdadera:\n\n```\nx = 0\nwhile x < 3:\n    print(x)\n    x += 1\n```"
+  },
+  {
+    "title": "Funciones (def)",
+    "keywords": ["funcion", "def", "definir funcion", "funciones"],
+    "answer": "Se crean con **def**. Permiten agrupar código reutilizable.\n\n```\ndef saludar(nombre):\n    print('Hola', nombre)\n\nsaludar('Ana')\n```"
+  },
+  {
+    "title": "Listas",
+    "keywords": ["lista", "listas", "list", "append", "pop"],
+    "answer": "Las **listas** son colecciones ordenadas y mutables.\n\n```\nnums = [1,2,3]\nnums.append(4)\nprint(nums[0])  # primer elemento\n```"
+  },
+  {
+    "title": "Tuplas",
+    "keywords": ["tupla", "tuplas", "tuple"],
+    "answer": "Las **tuplas** son como listas pero inmutables. Se usan cuando no quieres que cambien los valores.\n\n```\ncoords = (10, 20)\n```"
+  },
+  {
+    "title": "Diccionarios",
+    "keywords": ["diccionario", "dict", "diccionarios", "clave", "valor"],
+    "answer": "Los **diccionarios** almacenan pares clave:valor.\n\n```\np = {'nombre':'Ana', 'edad':20}\nprint(p['nombre'])\n```"
+  },
+  {
+    "title": "Manejo de archivos",
+    "keywords": ["file", "archivo", "open(", "leer", "escribir"],
+    "answer": "Leer/escribir archivos con `open()` y `with`:\n\n```\nwith open('datos.txt','r') as f:\n    contenido = f.read()\n```"
+  },
+  {
+    "title": "Excepciones (try/except)",
+    "keywords": ["exception", "excepcion", "try", "except", "error"],
+    "answer": "Manejar errores con try/except para que el programa no se detenga.\n\n```\ntry:\n    x = 1/0\nexcept ZeroDivisionError:\n    print('No se puede dividir por cero')\n```"
+  },
+  {
+    "title": "Clases y POO",
+    "keywords": ["clase", "clases", "objeto", "poo", "programacion orientada a objetos"],
+    "answer": "Definir clases y crear objetos:\n\n```\nclass Persona:\n    def __init__(self, nombre):\n        self.nombre = nombre\n\np = Persona('Ana')\nprint(p.nombre)\n```"
+  },
+  {
+    "title": "Módulos y pip",
+    "keywords": ["module", "modulo", "import", "pip", "libreria"],
+    "answer": "Importar módulos: `import math`. Instalar paquetes con pip: `pip install nombre_paquete`."
+  },
+  {
+    "title": "Comprehensions",
+    "keywords": ["list comprehension", "comprehension", "lista por comprension"],
+    "answer": "Forma compacta de crear listas:\n\n```\nsquares = [x*x for x in range(5)]\n```"
+  },
+  {
+    "title": "f-strings",
+    "keywords": ["f-string", "f string", "formato", "format"],
+    "answer": "Formateo moderno con f-strings:\n\n```\nn = 'Ana'\nprint(f'Hola {n}')\n```"
+  },
+  {
+    "title": "Buenas prácticas (PEP8)",
+    "keywords": ["pep8", "buenas practicas", "style", "naming"],
+    "answer": "Buenas prácticas: usa nombres claros, 4 espacios de indentación, funciones pequeñas y comentarios cuando sea necesario."
+  },
+  {
+    "title": "SQL básico",
+    "keywords": ["sql", "update", "delete", "select", "insert"],
+    "answer": "SQL básico: `SELECT` lee, `INSERT` inserta, `UPDATE` modifica, `DELETE` elimina registros."
+  }
+]
